@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE86ACF1-B4B0-4962-8290-8E7736376ABE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HospitalApp</RootNamespace>
+    <AssemblyName>HospitalApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IncomeExpensesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\IncomeExpensesForm.Designer.cs">
+      <DependentUpon>IncomeExpensesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageDoctors\AddDoctorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageDoctors\AddDoctorInfo.Designer.cs">
+      <DependentUpon>AddDoctorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageDoctors\DeleteDoctorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageDoctors\DeleteDoctorForm.Designer.cs">
+      <DependentUpon>DeleteDoctorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageDoctors\ManageDoctorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageDoctors\ManageDoctorsForm.Designer.cs">
+      <DependentUpon>ManageDoctorsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\AddSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\AddSupplierForm.Designer.cs">
+      <DependentUpon>AddSupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\AssortimentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\AssortimentForm.Designer.cs">
+      <DependentUpon>AssortimentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\ChooseOrderSupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\ChooseOrderSupForm.Designer.cs">
+      <DependentUpon>ChooseOrderSupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\CreateOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\CreateOrderForm.Designer.cs">
+      <DependentUpon>CreateOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\DeleteSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\DeleteSupplierForm.Designer.cs">
+      <DependentUpon>DeleteSupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\MainOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\MainOrdersForm.Designer.cs">
+      <DependentUpon>MainOrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\ManageSuppliersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\ManageSuppliersForm.Designer.cs">
+      <DependentUpon>ManageSuppliersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\OrdersListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\OrdersToSuppliers\OrdersListForm.Designer.cs">
+      <DependentUpon>OrdersListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Doctor\ChangeDoctorAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\ChangeDoctorAccountForm.Designer.cs">
+      <DependentUpon>ChangeDoctorAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\DoctorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\DoctorForm.Designer.cs">
+      <DependentUpon>DoctorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Orders\DoctorArchiveOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Orders\DoctorArchiveOrdersForm.Designer.cs">
+      <DependentUpon>DoctorArchiveOrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Orders\DoctorConfirmedOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Orders\DoctorConfirmedOrdersForm.Designer.cs">
+      <DependentUpon>DoctorConfirmedOrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Orders\DoctorNewOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Orders\DoctorNewOrdersForm.Designer.cs">
+      <DependentUpon>DoctorNewOrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Orders\DoctorOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Orders\DoctorOrders.Designer.cs">
+      <DependentUpon>DoctorOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Orders\OrderPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Orders\OrderPrice.Designer.cs">
+      <DependentUpon>OrderPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Orders\PrescribeMedicineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Orders\PrescribeMedicineForm.Designer.cs">
+      <DependentUpon>PrescribeMedicineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginMenu.Designer.cs">
+      <DependentUpon>LoginMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Patient\AddPatientOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\AddPatientOrderForm.Designer.cs">
+      <DependentUpon>AddPatientOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\ChangeAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\ChangeAccountForm.Designer.cs">
+      <DependentUpon>ChangeAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\OrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\OrdersForm.Designer.cs">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\PatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\PatientForm.Designer.cs">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\AddInfoOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\AddInfoOrders.Designer.cs">
+      <DependentUpon>AddInfoOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\ChangeOrderStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\ChangeOrderStatusForm.Designer.cs">
+      <DependentUpon>ChangeOrderStatusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\ConfirmedOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\ConfirmedOrdersForm.Designer.cs">
+      <DependentUpon>ConfirmedOrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\NewOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\NewOrdersForm.Designer.cs">
+      <DependentUpon>NewOrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\OrdersArchiveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\OrdersArchiveForm.Designer.cs">
+      <DependentUpon>OrdersArchiveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\ManageStorage\AddNewItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\ManageStorage\AddNewItemForm.Designer.cs">
+      <DependentUpon>AddNewItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\ManageStorage\ChangeCountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\ManageStorage\ChangeCountForm.Designer.cs">
+      <DependentUpon>ChangeCountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\ManageStorage\ChangePriceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\ManageStorage\ChangePriceForm.Designer.cs">
+      <DependentUpon>ChangePriceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\ManageStorage\ManageStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\ManageStorage\ManageStorageForm.Designer.cs">
+      <DependentUpon>ManageStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierForm.Designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\SupplierManageOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\ManageOrders\SupplierManageOrdersForm.Designer.cs">
+      <DependentUpon>SupplierManageOrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupportFuncs\StoredProcedures.cs" />
+    <Compile Include="SupportFuncs\SupFuncs.cs" />
+    <EmbeddedResource Include="Admin\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\IncomeExpensesForm.resx">
+      <DependentUpon>IncomeExpensesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ManageDoctors\AddDoctorInfo.resx">
+      <DependentUpon>AddDoctorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ManageDoctors\DeleteDoctorForm.resx">
+      <DependentUpon>DeleteDoctorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ManageDoctors\ManageDoctorsForm.resx">
+      <DependentUpon>ManageDoctorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\OrdersToSuppliers\AddSupplierForm.resx">
+      <DependentUpon>AddSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\OrdersToSuppliers\AssortimentForm.resx">
+      <DependentUpon>AssortimentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\OrdersToSuppliers\ChooseOrderSupForm.resx">
+      <DependentUpon>ChooseOrderSupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\OrdersToSuppliers\CreateOrderForm.resx">
+      <DependentUpon>CreateOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\OrdersToSuppliers\DeleteSupplierForm.resx">
+      <DependentUpon>DeleteSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\OrdersToSuppliers\MainOrdersForm.resx">
+      <DependentUpon>MainOrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\OrdersToSuppliers\ManageSuppliersForm.resx">
+      <DependentUpon>ManageSuppliersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\OrdersToSuppliers\OrdersListForm.resx">
+      <DependentUpon>OrdersListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\ChangeDoctorAccountForm.resx">
+      <DependentUpon>ChangeDoctorAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\DoctorForm.resx">
+      <DependentUpon>DoctorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Orders\DoctorArchiveOrdersForm.resx">
+      <DependentUpon>DoctorArchiveOrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Orders\DoctorConfirmedOrdersForm.resx">
+      <DependentUpon>DoctorConfirmedOrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Orders\DoctorNewOrdersForm.resx">
+      <DependentUpon>DoctorNewOrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Orders\DoctorOrders.resx">
+      <DependentUpon>DoctorOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Orders\OrderPrice.resx">
+      <DependentUpon>OrderPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Orders\PrescribeMedicineForm.resx">
+      <DependentUpon>PrescribeMedicineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginMenu.resx">
+      <DependentUpon>LoginMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\AddPatientOrderForm.resx">
+      <DependentUpon>AddPatientOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\ChangeAccountForm.resx">
+      <DependentUpon>ChangeAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\OrdersForm.resx">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\PatientForm.resx">
+      <DependentUpon>PatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\ManageOrders\AddInfoOrders.resx">
+      <DependentUpon>AddInfoOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\ManageOrders\ChangeOrderStatusForm.resx">
+      <DependentUpon>ChangeOrderStatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\ManageOrders\ConfirmedOrdersForm.resx">
+      <DependentUpon>ConfirmedOrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\ManageOrders\NewOrdersForm.resx">
+      <DependentUpon>NewOrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\ManageOrders\OrdersArchiveForm.resx">
+      <DependentUpon>OrdersArchiveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\ManageStorage\AddNewItemForm.resx">
+      <DependentUpon>AddNewItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\ManageStorage\ChangeCountForm.resx">
+      <DependentUpon>ChangeCountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\ManageStorage\ChangePriceForm.resx">
+      <DependentUpon>ChangePriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\ManageStorage\ManageStorageForm.resx">
+      <DependentUpon>ManageStorageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\ManageOrders\SupplierManageOrdersForm.resx">
+      <DependentUpon>SupplierManageOrdersForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\hospital-building-for-healthcare-cartoon-background-vector-illustration-with-ambulance-car-doctor-patient-nurses-and-medical-clinic-exterior_2175-1498.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
