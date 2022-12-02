@@ -46,9 +46,9 @@ namespace HospitalApp.SupportFuncs
 
 		}
 
-		static public void AddNewItemToStorage(OleDbConnection conn, int sup_id, int med_id, int unit_price, int quantity)
+		static public void AddNewItemToStorage(OleDbConnection conn, string sup_id, int med_id, int unit_price, int quantity)
 		{
-			string strSQL = String.Format(@"exec AddItemToStorage @supID = {0}, @medID = {1}, @unit_price = {2}, @quantity = {3})", sup_id, med_id, unit_price, quantity);
+			string strSQL = String.Format(@"exec AddItemToStorage @supID = {0}, @medID = {1}, @unit_price = {2}, @quantity = {3}", sup_id, med_id, unit_price, quantity);
 			OleDbCommand cmdIC = new OleDbCommand(strSQL, Constants.cn);
 
 			try

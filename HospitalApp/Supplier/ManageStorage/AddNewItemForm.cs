@@ -115,11 +115,11 @@ namespace HospitalApp.Supplier.ManageStorage
 				return;
 			}
 
-			strSQL = String.Format(@"INSERT INTO SupplierMedicines (sup_id, med_id, unit_price, quantity) VALUES ({0}, {1}, {2}, {3})", Constants.UserPassport[Constants.UserPassport.Length - 1], med_id, tbPrice.Text, tbCount.Text);
+			/*strSQL = String.Format(@"INSERT INTO SupplierMedicines (sup_id, med_id, unit_price, quantity) VALUES ({0}, {1}, {2}, {3})", Constants.UserPassport[Constants.UserPassport.Length - 1], med_id, tbPrice.Text, tbCount.Text);
 			OleDbCommand cmdIC = new OleDbCommand(strSQL, Constants.cn);
-			cmdIC.ExecuteNonQuery();
+			cmdIC.ExecuteNonQuery();*/
 
-			StoredProcedures.AddNewItemToStorage(Constants.cn, Constants.UserPassport[Constants.UserPassport.Length - 1], med_id, Convert.ToInt32(tbPrice.Text), Convert.ToInt32(tbCount.Text));
+			StoredProcedures.AddNewItemToStorage(Constants.cn,Constants.UserPassport[Constants.UserPassport.Length - 1].ToString(), med_id, Convert.ToInt32(tbPrice.Text), Convert.ToInt32(tbCount.Text));
 
 			MSF.Close();
 			var msf = new ManageStorageForm();
