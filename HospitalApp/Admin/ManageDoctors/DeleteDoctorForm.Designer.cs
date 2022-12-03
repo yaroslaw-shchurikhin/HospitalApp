@@ -71,6 +71,7 @@
 			this.Controls.Add(this.cbNames);
 			this.Controls.Add(this.labelName);
 			this.Name = "DeleteDoctorForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Увольнение врача";
 			this.ResumeLayout(false);
 			this.PerformLayout();

@@ -66,14 +66,17 @@ namespace HospitalApp.Doctor.Orders
 		{
 			if (e.RowIndex >= 0 && e.ColumnIndex == dgDoctorOrders.Columns["Отменить"].Index)
 			{
-				var o_id = dgDoctorOrders.Rows[e.RowIndex].Cells[1].Value;
-				string strSQL = String.Format("DELETE FROM Orders WHERE order_id = {0}", Convert.ToInt32(o_id));
-				OleDbCommand cmd = new OleDbCommand(strSQL, Constants.cn);
-				cmd.ExecuteNonQuery();
+				var o_id = dgDoctorOrders.Rows[e.RowIndex].Cells[2].Value;
+				if (o_id != DBNull.Value)
+				{
+					string strSQL = String.Format("DELETE FROM Orders WHERE order_id = {0}", Convert.ToInt32(o_id));
+					OleDbCommand cmd = new OleDbCommand(strSQL, Constants.cn);
+					cmd.ExecuteNonQuery();
 
-				this.Close();
-				OrdersForm of = new OrdersForm();
-				of.Show();
+					this.Close();
+					DoctorNewOrdersForm of = new DoctorNewOrdersForm(IsAdmin);
+					of.Show();
+				}
 			}
 			else if (e.RowIndex >= 0 && e.ColumnIndex == dgDoctorOrders.Columns["Подтвердить"].Index)
 			{

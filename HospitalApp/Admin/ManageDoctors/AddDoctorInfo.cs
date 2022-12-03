@@ -129,5 +129,11 @@ namespace HospitalApp.Admin.ManageDoctors
 				e.Handled = true;
 			}
 		}
+
+		private void AddDoctorInfo_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			ManageDoctorsForm mdf = new ManageDoctorsForm();
+			mdf.Show();
+		}
 	}
 }

@@ -230,7 +230,9 @@
 			this.Controls.Add(this.labelName);
 			this.Controls.Add(this.buttonOK);
 			this.Name = "AddDoctorInfo";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Добавление нового врача";
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddDoctorInfo_FormClosed);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

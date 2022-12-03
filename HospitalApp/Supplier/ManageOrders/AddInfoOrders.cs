@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalApp.Doctor.Orders;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,8 @@ namespace HospitalApp.Supplier.ManageOrders
 				FROM OrdersToSuppliersDetails AS otsd
 				INNER JOIN Medicines AS m ON m.med_id = otsd.med_id
 				WHERE otsd.ots_id = '{0}'
-				GROUP BY  otsd.ots_id, m.name, otsd.unit_price, otsd.quantity, otsd.discount", ots_id);
+				GROUP BY  otsd.ots_id, m.name, otsd.unit_price, otsd.quantity, otsd.discount"
+			, ots_id);
 
 			OleDbDataAdapter dAdapter = new OleDbDataAdapter(strSQL, Constants.cn);
 			dAdapter.Fill(dtTmp);
@@ -32,6 +34,8 @@ namespace HospitalApp.Supplier.ManageOrders
 			dgAddInfoOrder.DataSource = bs;
 			dgAddInfoOrder.AutoSizeColumnsMode =
 					 DataGridViewAutoSizeColumnsMode.AllCells;
+
+			dgAddInfoOrder.Columns["ots_id"].Visible = false;
 		}
 	}
 }

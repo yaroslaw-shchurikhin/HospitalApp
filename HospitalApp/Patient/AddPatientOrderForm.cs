@@ -82,7 +82,7 @@ namespace HospitalApp.Patient
 
 			var dateText = cbDate.Text.Replace(" ", "");
 			var parseDate = dateText.Split(',');
-			string dateString = parseDate[0] + '-' + SupFuncs.MonthToInt(parseDate[1]) + '-' + parseDate[2] + "T" + cbTime.Text + ":00";
+			string dateString = parseDate[0] + '-' + parseDate[2] + "-" + SupFuncs.MonthToInt(parseDate[1]) + " " + cbTime.Text + ":00.000";
 
 			DateTime dateTime = DateTime.Parse(dateString);
 			strSQL = String.Format("INSERT INTO Orders (patient_id, doctor_id, date, os_id) VALUES ({0}, {1}, '{2}', 1)",  patient_id, doctor_id, dateString);
@@ -91,6 +91,7 @@ namespace HospitalApp.Patient
 			//2022-12-19 16:00:00.000
 
 
+			this.Close();
 			OF.Close();
 			OrdersForm of = new OrdersForm();
 			of.Show();
@@ -135,7 +136,7 @@ namespace HospitalApp.Patient
 
 			var dateText = cbDate.Text.Replace(" ", "");
 			var parseDate = dateText.Split(',');
-			string dateString = parseDate[0] + '-' + SupFuncs.MonthToInt(parseDate[1]) + '-' + parseDate[2];
+			string dateString = parseDate[0] + "-%" + SupFuncs.MonthToInt(parseDate[1]) + "-%" + parseDate[2];
 			string strSQL = String.Format("SELECT d.first_name, d.last_name, o.date\r\nFROM Doctors AS d\r\nINNER JOIN Orders as o ON o.doctor_id = d.doctor_id\r\n" +
 				"WHERE CONVERT(VARCHAR(25), o.date, 126) LIKE '{0}%' AND d.first_name = '{1}' AND d.last_name = '{2}'", dateString, dName, dLastName);
 			OleDbDataAdapter dAdapterOrders = new OleDbDataAdapter(strSQL, Constants.cn);

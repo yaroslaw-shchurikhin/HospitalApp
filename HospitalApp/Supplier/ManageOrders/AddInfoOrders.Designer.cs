@@ -39,6 +39,7 @@
 			this.dgAddInfoOrder.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgAddInfoOrder.Location = new System.Drawing.Point(0, 0);
 			this.dgAddInfoOrder.Name = "dgAddInfoOrder";
+			this.dgAddInfoOrder.ReadOnly = true;
 			this.dgAddInfoOrder.RowHeadersWidth = 62;
 			this.dgAddInfoOrder.RowTemplate.Height = 28;
 			this.dgAddInfoOrder.Size = new System.Drawing.Size(800, 450);

@@ -24,7 +24,7 @@ namespace HospitalApp.Admin.OrdersToSuppliers
 			string strSQL = String.Format(@"SELECT ots.ots_id, ots.create_date, ots.delivery_date, s.status_name FROM OrdersToSuppliers AS ots " +
 				"INNER JOIN Statuses AS s ON s.status_id = ots.status_id " +
 				"INNER JOIN Suppliers AS sp ON sp.sup_id = ots.sup_id " +
-				"WHERE (s.status_name = 'on the way' OR s.status_name = 'confirmed')" +
+				"WHERE (s.status_name = 'on the way' OR s.status_name = 'confirmed' OR s.status_name = 'processed')" +
 				"GROUP BY ots.ots_id, ots.create_date, ots.delivery_date, s.status_name", Constants.UserPassport);
 
 			OleDbDataAdapter dAdapter = new OleDbDataAdapter(strSQL, Constants.cn);

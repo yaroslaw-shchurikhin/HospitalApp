@@ -45,7 +45,7 @@ namespace HospitalApp.Doctor.Orders
 				cmd.ExecuteNonQuery();
 
 				DNOF.Close();
-				DoctorOrders of = new DoctorOrders(IsAdmin);
+				DoctorNewOrdersForm of = new DoctorNewOrdersForm(IsAdmin);
 				of.Show();
 				this.Close();
 			}
