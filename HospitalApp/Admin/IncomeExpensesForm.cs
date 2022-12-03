@@ -27,7 +27,7 @@ namespace HospitalApp.Admin
 
 			//TODO
 			List<int> incomes = new List<int>();
-			OleDbCommand IDS = new OleDbCommand(String.Format("SELECT o.price\r\nFROM Orders AS o\r\nWHERE o.date > DATEADD(day, -30, GETDATE()) AND o.date < GETDATE()"), Constants.cn);
+			OleDbCommand IDS = new OleDbCommand(String.Format("SELECT o.price\r\nFROM Orders AS o\r\nWHERE o.date > DATEADD(day, -30, GETDATE()) AND o.date <= GETDATE()"), Constants.cn);
 			OleDbDataReader rdr = IDS.ExecuteReader();
 
 			while (rdr.Read())
@@ -38,7 +38,7 @@ namespace HospitalApp.Admin
 			rdr.Close();
 
 			List<int> expenses_list = new List<int>();
-			IDS = new OleDbCommand(String.Format("SELECT pm.unit_price, pm.quantity\r\nFROM PrescribedMedications AS pm\r\nINNER JOIN Orders AS o ON o.order_id = pm.order_id\r\nWHERE pm.is_paid = 'False' AND o.date > DATEADD(day, -30, GETDATE()) AND o.date < GETDATE()"), Constants.cn);
+			IDS = new OleDbCommand(String.Format("SELECT pm.unit_price, pm.quantity\r\nFROM PrescribedMedications AS pm\r\nINNER JOIN Orders AS o ON o.order_id = pm.order_id\r\nWHERE pm.is_paid = 'False' AND o.date > DATEADD(day, -30, GETDATE()) AND o.date <= GETDATE()"), Constants.cn);
 			rdr = IDS.ExecuteReader();
 
 			while (rdr.Read())
@@ -47,7 +47,7 @@ namespace HospitalApp.Admin
 			}
 			rdr.Close();
 
-			IDS = new OleDbCommand(String.Format("SELECT otsd.quantity, otsd.unit_price\r\nFROM OrdersToSuppliers AS ots\r\nINNER JOIN OrdersToSuppliersDetails AS otsd ON otsd.ots_id = ots.ots_id\r\nWHERE ots.create_date > DATEADD(day, -30, GETDATE()) AND ots.create_date < GETDATE()"), Constants.cn);
+			IDS = new OleDbCommand(String.Format("SELECT otsd.quantity, otsd.unit_price\r\nFROM OrdersToSuppliers AS ots\r\nINNER JOIN OrdersToSuppliersDetails AS otsd ON otsd.ots_id = ots.ots_id\r\nWHERE ots.create_date > DATEADD(day, -30, GETDATE()) AND ots.create_date <= GETDATE()"), Constants.cn);
 			rdr = IDS.ExecuteReader();
 
 			while (rdr.Read())

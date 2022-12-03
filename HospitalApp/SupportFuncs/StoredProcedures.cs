@@ -79,8 +79,8 @@ namespace HospitalApp.SupportFuncs
 				if (c == -1)
 				{
 					MessageBox.Show("Операция не была выполнена, так как такой номер паспорта уже существует", "Внимание!", MessageBoxButtons.OK);
+					return;
 				}
-				return;
 			}
 			catch (OleDbException exc)
 			{
